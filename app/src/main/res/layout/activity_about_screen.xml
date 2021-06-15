@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".aboutScreen">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="111dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="112dp"
+        android:background="#000"
+        android:gravity="center"
+        android:text="aboutApp:"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="309dp"
+        android:layout_height="442dp"
+        android:layout_marginTop="20dp"
+        android:text="The Application is a cloud application that displays news about Jerusalem and the events taking place in it, as the application displays a series of news in a sequential manner and you can view the news and to know the details about it, you can go to the attached website and the application displays videos about the events and displays a set of photos to clarify these events, the firebase tool was used within the application to store and retrieve data on demand.\n\n
+
+The news was obtained from references.
+"
+        android:textColor="#2E2B2B"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>
