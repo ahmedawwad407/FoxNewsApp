@@ -48,9 +48,9 @@ class VideoOffLoading : AppCompatActivity() {
         val factory: DataSource.Factory = DefaultDataSourceFactory(this, "exoplayer-codelab")
         val mediaSource: MediaSource =
             ProgressiveMediaSource.Factory(factory).createMediaSource(uri)
-        player.setPlayWhenReady(playWhenReady)
-        player.seekTo(currentWindow, playPackPosition)
-        player.prepare(mediaSource, false, false)
+        player.setPlayWhenReady(playWhenReady)//اضبط التشغيل عند الاستعداد
+        player.seekTo(currentWindow, playPackPosition)//start video
+        player.prepare(mediaSource, false, false)//اعداد الفيديو
     }
 
 

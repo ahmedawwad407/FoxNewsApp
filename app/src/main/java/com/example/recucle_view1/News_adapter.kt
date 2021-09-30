@@ -16,8 +16,8 @@ import com.example.recucle_view1.R
 
 class News_adapter : RecyclerView.Adapter<News_adapter.Recycl_holder> {
     var layoutid: Int = 0
-    lateinit var datalist: ArrayList<News>
-    lateinit var context: Context
+     var datalist: ArrayList<News>
+     var context: Context
 
     constructor(layoutid: Int, array: ArrayList<News>, context: Context) {
         this.layoutid = layoutid
@@ -85,10 +85,12 @@ class News_adapter : RecyclerView.Adapter<News_adapter.Recycl_holder> {
         constructor(itemView: View) : super(itemView) {
             itemView.setOnClickListener {
                 val news = datalist.get(adapterPosition)
+
                 var i = Intent(context, Details::class.java)
                 i.putExtra("desc", news.descreption)
                 i.putExtra("link", news.link)
                 i.putExtra("inPhoto", news.inPhoto)
+
                 context.startActivity(i)
             }
             newsimagev = itemView.findViewById<ImageView>(R.id.imageView1)

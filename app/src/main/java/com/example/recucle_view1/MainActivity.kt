@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var toogle: ActionBarDrawerToggle
 
     var db = FirebaseFirestore.getInstance()
+
     lateinit var news1: News
     lateinit var news2: News
     lateinit var news3: News
@@ -37,9 +38,11 @@ class MainActivity : AppCompatActivity() {
     lateinit var news10: News
     lateinit var news11: News
     lateinit var news12: News
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -53,7 +56,7 @@ class MainActivity : AppCompatActivity() {
             R.string.close
         )//connection toolbar and Drawer_layout
         toogle.syncState()//create icon borger
-        drawerlayout.addDrawerListener(toogle)
+        drawerlayout.addDrawerListener(toogle)//change icon borger and icon close
 
 
         var navigationView = findViewById<NavigationView>(R.id.NavigationView)
@@ -237,7 +240,7 @@ class MainActivity : AppCompatActivity() {
 
         val adapter_view =
             News_adapter(R.layout.news, arr, this)//this => dialog يحتاج الواجهة الي انا فيها
-        newsRes.adapter = adapter_view //list matches adapter
+            newsRes.adapter = adapter_view //list matches adapter
 
         val m = LinearLayoutManager(this)
         m.orientation = LinearLayoutManager.VERTICAL
@@ -251,9 +254,9 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        saveFirebase()
-        readFirebase()
-        getRegToken()
+         saveFirebase()
+         readFirebase()
+         getRegToken()
     }
 
     fun saveFirebase() {
@@ -381,18 +384,18 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        //item.itemId == android.R.id.home //solution 1
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        //item.itemId == android.R.id.home //solution 1
+//
+//        if (toogle.onOptionsItemSelected(item)) {
+//            //excute code
+//            Toast.makeText(applicationContext, "=============", Toast.LENGTH_LONG).show()
+//
+//        }
+//        return super.onOptionsItemSelected(item)
+//    }
 
-        if (toogle.onOptionsItemSelected(item)) {
-            //excute code
-            Toast.makeText(applicationContext, "=============", Toast.LENGTH_LONG).show()
-
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
-
+        //specific Notification
     fun getRegToken() {
         FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
             if (!task.isSuccessful) {
